@@ -1,4 +1,4 @@
-import Home from "./pages/home/Home";
+// import Home from "./pages/home/Home";
 import Profile from "./pages/profile/Profile";
 
 // import MenuIcon from '@mui/icons-material/Menu';
@@ -7,7 +7,7 @@ import Profile from "./pages/profile/Profile";
 function App() {
   return (
     <>
-  <Profile/>
+    <Profile/>
   
     </>
   )
