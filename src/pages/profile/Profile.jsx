@@ -22,9 +22,10 @@ export default function Profile() {
                         <span className="profileInfoDesc">hello hello hello</span>
                     </div>
                 </div>
-                <div className="profileRightBottom"></div>
-                <Feed/>
-                <Rightbar profile/>
+                <div className="profileRightBottom">
+                    <Feed/>
+                    <Rightbar profile/>
+                </div>
             </div>
         </div>
         </>

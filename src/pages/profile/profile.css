@@ -1,6 +1,5 @@
 .profile{
     display: flex;
-
 }
 
 .profileRight{
@@ -46,6 +45,7 @@
     font-weight: 300;
 }
 
-.profilerightBottom{
+.profileRightBottom{
     display: flex;
 }
+
