@@ -1,5 +1,5 @@
 import "./post.css"
-import {MoreVert} from '@mui/icons-material';
+// import {MoreVert} from '@mui/icons-material';
 // import {Users} from "../..//dummyData";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -17,6 +17,7 @@ export default function Post({post}) {
 
         }
         fetchUser();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
     const  likeHandler=()=>{
@@ -36,7 +37,7 @@ export default function Post({post}) {
                         <span className="postDate">{post.createdAt}</span>
                     </div>
                     <div className="postTopRight">
-                        <MoreVert/>
+                        {/* <MoreVert/> */}
                     </div>
                 </div>
                 <div className="postCenter">
