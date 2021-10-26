@@ -1,5 +1,7 @@
 .homeContainer{
     display:flex;
-    width: 100%;
+    width: 50%;
+    align-content: center;
+
     
 }

@@ -8,11 +8,11 @@ export default function Home() {
     return (
     <>
     <Topbar/>
-    {/* <div className="homeContainer">
-        <Sidebar/>
+    <div className="homeContainer">
+        {/* <Sidebar/> */}
         <Feed/>
-        <Rightbar/>
-    </div> */}
+        {/* <Rightbar/> */}
+    </div>
     
     </>
     )
