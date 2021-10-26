@@ -7,7 +7,7 @@ export default function Topbar() {
             <div className="topbarLeft">
                 <span className="logo">Distantly-Near</span>
             </div>
-            <div className="topbarCenter">
+            {/* <div className="topbarCenter">
                 <div className="searchbar">
                     <Search className="searchIcon"/>
                     <input placeholder="Search for friend, post or video" className="searchInput" />
@@ -30,8 +30,8 @@ export default function Topbar() {
                     <Notifications/>
                     <span className="topbarIconBadge">1</span>
                 </div>
-            </div>
-        <img src="/assets/person/1.jpg" alt="" className="topbarImg"/>
+            </div> */}
+        {/* <img src="/assets/person/1.jpg" alt="" className="topbarImg"/> */}
         </div>
     )
 }
