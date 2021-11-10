@@ -5,6 +5,8 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import {format} from "timeago.js"
 import {Link} from "react-router-dom"
+import { AuthContext } from "../../context/AuthContext";
+import { useContext } from "react";
 
 export default function Post({post}) {
     
@@ -12,7 +14,13 @@ export default function Post({post}) {
     const [ isLiked,setIsLiked] = useState(false);
     const [ user, setUser] = useState({});
     const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    const {user:currentUser} = useContext(AuthContext)
 
+
+    useEffect(() => {
+        setIsLiked(post.likes.includes(currentUser._id));
+      }, [currentUser._id, post.likes]);
+      
     useEffect(() =>{
         const fetchUser = async () =>{
             const res = await axios.get(`/users?userId=${post.userId}`);
@@ -23,10 +31,13 @@ export default function Post({post}) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[post.userId]);
 
-    const  likeHandler=()=>{
-        setLike(isLiked ? like-1 : like+1)
-        setIsLiked(!isLiked)
-    }
+    const likeHandler = () => {
+        try {
+          axios.put("/posts/" + post._id + "/like", { userId: currentUser._id });
+        } catch (err) {}
+        setLike(isLiked ? like - 1 : like + 1);
+        setIsLiked(!isLiked);
+      };
 
     return (
         <div className="post">
@@ -34,7 +45,11 @@ export default function Post({post}) {
                 <div className="postTop">
                     <div className="postTopLeft">
                         <Link to={`profile/${user.username}`}>
-                        <img className="postProfileImg" alt="" src={user.profilePicture || PF+"person/noAvatar.png"}></img>
+                        <img className="postProfileImg" alt="" src={
+                  user.profilePicture
+                    ? PF + user.profilePicture
+                    : PF + "person/noAvatar.png"
+                }></img>
                         </Link>
                         <span className="postUsername">{user.firstName} {user.lastName}</span>
 
